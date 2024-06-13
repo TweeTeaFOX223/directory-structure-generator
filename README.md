@@ -36,8 +36,6 @@
 <br>  
 
 
-
-<hr>
 <br>  
 
 # ★今すぐこのアプリを使用する方法
@@ -53,7 +51,7 @@
 
 下記のリンクに入り、右上の「・・・」→「Download」を押す、  
 又は、中央付近にある「↓」のボタンを押すとダウンロードできます。  
-https:
+https://github.com/TweeTeaFOX223/directory-structure-generator/blob/main/dist-offline/index.html  
 <br>
 # このアプリをビルド/実行する方法
 
