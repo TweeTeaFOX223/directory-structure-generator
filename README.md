@@ -42,6 +42,7 @@
 
 ## オンライン：このリポジトリのGitHub Pagesにアクセス
 **GitHub Pages↓にデプロイしています。**  
+https://tweeteafox223.github.io/directory-structure-generator/  
 <br>
 
 ## ローカル・オフライン：ビルド済みの単一htmlを開いて使用
