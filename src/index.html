@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset=" UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>時間割から学校の授業用フォルダ作成するツール</title>
+
+
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
+</head>
+
+<body>
+
+  <ul class="select-app-menu">
+    <li class="selected-app" data-id="create-school-folder">時間割から学校の授業用フォルダ作成するツール</li>
+    <li data-id="create-numbering-folder">指定した範囲の数で連番フォルダ作るツール</li>
+  </ul>
+
+  <div class="app-main-ui active" id="create-school-folder">
+    <h1>時間割から学校の授業用フォルダ作成するツール</h1>
+
+    <section class="manual">
+      <h2>使用方法</h2>
+
+      <div class="howto">
+        <p>1：表に各時間の授業名を入力する(授業がない所は空白にする)</p>
+        <p>2：授業回数とファイル名を入力し「フォルダ生成してDL」をクリック</p>
+        <p>3：パソコンに授業用フォルダがダウンロードされます(zip形式)</p>
+      </div>
+
+      <div class="attention">
+        <p>注：ブラウザの横幅を一番小さくすると見た目が小さくなります</p>
+        <p>注：「各曜日＞各授業＞各回」という感じのフォルダになります。</p>
+        <p>注：授業回数の上限は100回までにしています(動作が重くなるため)</p>
+        <p>注：エクセルに貼り付ける用のTSVファイルをフォルダに同梱します。</p>
+        <p>注：何にも授業がない時間、曜日の所はフォルダ生成しません(仕様です)</p>
+        <p>注：ファイル名に使用できない文字[\ / : * ? &lt; &gt;]を入力すると「ぬ」に置換します</p>
+
+      </div>
+    </section>
+
+
+    <section class="input-timetable">
+      <table class="timetable" border="1">
+        <tr>
+          <th></th>
+          <th id="Mo">月曜日</th>
+          <th id="Tu">火曜日</th>
+          <th id="We">水曜日</th>
+          <th id="Th">木曜日</th>
+          <th id="Fr">金曜日</th>
+          <th id="Sa">土曜日</th>
+        </tr>
+        <tr>
+          <th class="periodCell" id="1st">1時間目</th>
+          <td><input type="text" id="Mo-1st"></td>
+          <td><input type="text" id="Tu-1st"></td>
+          <td><input type="text" id="We-1st"></td>
+          <td><input type="text" id="Th-1st"></td>
+          <td><input type="text" id="Fr-1st"></td>
+          <td><input type="text" id="Sa-1st"></td>
+        </tr>
+        <tr>
+          <th class="periodCell" id="2st">2時間目</th>
+          <td><input type="text" id="Mo-2st"></td>
+          <td><input type="text" id="Tu-2st"></td>
+          <td><input type="text" id="We-2st"></td>
+          <td><input type="text" id="Th-2st"></td>
+          <td><input type="text" id="Fr-2st"></td>
+          <td><input type="text" id="Sa-2st"></td>
+        </tr>
+        <tr>
+          <th class="periodCell" id="3st">3時間目</th>
+          <td><input type="text" id="Mo-3st"></td>
+          <td><input type="text" id="Tu-3st"></td>
+          <td><input type="text" id="We-3st"></td>
+          <td><input type="text" id="Th-3st"></td>
+          <td><input type="text" id="Fr-3st"></td>
+          <td><input type="text" id="Sa-3st"></td>
+        </tr>
+        <tr>
+          <th class="periodCell" id="4st">4時間目</th>
+          <td><input type="text" id="Mo-4st"></td>
+          <td><input type="text" id="Tu-4st"></td>
+          <td><input type="text" id="We-4st"></td>
+          <td><input type="text" id="Th-4st"></td>
+          <td><input type="text" id="Fr-4st"></td>
+          <td><input type="text" id="Sa-4st"></td>
+        </tr>
+        <tr>
+          <th class="periodCell" id="5st">5時間目</th>
+          <td><input type="text" id="Mo-5st"></td>
+          <td><input type="text" id="Tu-5st"></td>
+          <td><input type="text" id="We-5st"></td>
+          <td><input type="text" id="Th-5st"></td>
+          <td><input type="text" id="Fr-5st"></td>
+          <td><input type="text" id="Sa-5st"></td>
+        </tr>
+        <tr>
+          <th class="periodCell" id="6st">6時間目</th>
+          <td><input type="text" id="Mo-6st"></td>
+          <td><input type="text" id="Tu-6st"></td>
+          <td><input type="text" id="We-6st"></td>
+          <td><input type="text" id="Th-6st"></td>
+          <td><input type="text" id="Fr-6st"></td>
+          <td><input type="text" id="Sa-6st"></td>
+        </tr>
+        <tr>
+          <th class="periodCell" id="7st">7時間目</th>
+          <td><input type="text" id="Mo-7st"></td>
+          <td><input type="text" id="Tu-7st"></td>
+          <td><input type="text" id="We-7st"></td>
+          <td><input type="text" id="Th-7st"></td>
+          <td><input type="text" id="Fr-7st"></td>
+          <td><input type="text" id="Sa-7st"></td>
+        </tr>
+        <tr>
+          <th class="periodCell" id="8st">8時間目</th>
+          <td><input type="text" id="Mo-8st"></td>
+          <td><input type="text" id="Tu-8st"></td>
+          <td><input type="text" id="We-8st"></td>
+          <td><input type="text" id="Th-8st"></td>
+          <td><input type="text" id="Fr-8st"></td>
+          <td><input type="text" id="Sa-8st"></td>
+        </tr>
+      </table>
+    </section>
+
+
+    <section class="menu">
+      <div class="menu-items">
+
+        <fieldset class="class-num">
+          <legend>授業回数を入力</legend>
+          <input type="number" id="lessons-num" value="12">
+        </fieldset>
+
+        <fieldset class="input-name">
+          <legend>フォルダ名を入力</legend>
+          <input type="text" id="folder-name">
+          <p class="red">※空白だとエラー</p>
+        </fieldset>
+
+        <fieldset class="generate-button">
+          <button id="generateBtn">フォルダ生成してDLボタン</button>
+        </fieldset>
+      </div>
+    </section>
+  </div>
+
+  <div class="app-main-ui" id="create-numbering-folder">
+    <h1>指定した範囲の数で連番フォルダ作るだけのツール</h1>
+
+    <div class="options">
+
+      <fieldset>
+        <legend>1:名前を入力</legend>
+        <p>Winのファイル名に</p>
+        <p>使用できないのは弾く</p>
+        <input type="text" id="num-folder-name">
+      </fieldset>
+
+
+
+      <fieldset>
+        <legend>2:連番の数を入力</legend>
+        <p>開始の数(0以上)</p>
+        <input type="text" id="start-number" value="0">
+        <p>終了の数(1000以下)</p>
+        <input type="text" id="end-number" value="10">
+      </fieldset>
+
+      <fieldset>
+        <legend>3:連番の形式を選択</legend>
+        <select id="select-type">
+          <option>名前_数字</option>
+          <option>数字_名前</option>
+          <option>名前数字</option>
+          <option>数字名前</option>
+          <option>名前(数字)</option>
+          <option>名前（数字）</option>
+          <option>名前[数字]</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>4:保存するボタン</legend>
+        <button id="save-button">ここを押すと保存</button>
+      </fieldset>
+    </div>
+
+
+    <div class="supplement">
+      <p>※ファイル数の上限は100回までにしています(動作が重くなるため)</p>
+      <p>※UNIXコマンドのブレース展開でも作れます</p>
+      <p>※なのでこのアプリは正直微妙なんですよね…</p>
+      <code>mkdir -p 入れるフォルダ/名前_{1..10}</code>
+    </div>
+
+  </div>
+
+
+
+  <div class="other">
+    <details>
+      <summary>使用しているライブラリ(どれもMITライセンスなので、これもMITライセンス)</summary>
+      <p>JSZip.js(ZIPを作れるようにするやつ)</p>
+      <p>&emsp;&emsp;Copyright (c) 2009-2016 Stuart Knightley, David Duponchel, Franz Buchinger, António Afonso</p>
+
+      <a href="https://github.com/Stuk/jszip">https://github.com/Stuk/jszip</a>
+
+      <p>FileSaver.js(作ったZIPを簡単に保存するやつ)</p>
+      <p>&emsp;&emsp;Copyright © 2016 Eli Grey.</p>
+      <a href="https://github.com/eligrey/FileSaver.js">https://github.com/eligrey/FileSaver.js</a>
+
+    </details>
+
+    <details>
+      <summary>プログラム作成の参考にしたウェブサイト</summary>
+
+      <p>jszipでzipファイル生成して保存(基本的な使い方)</p>
+      <a
+        href="https://yizm.work/web%E9%96%8B%E7%99%BA/jszip_saveaszip/">https://yizm.work/web%E9%96%8B%E7%99%BA/jszip_saveaszip/</a>
+      <p>How to use JSZip(フォルダをネスト＝多層にする方法)</p>
+      <a
+        href="https://stuk.github.io/jszip/documentation/examples.html">https://stuk.github.io/jszip/documentation/examples.html</a>
+
+      <p>saveAs is not defined when using JSzip(エラー対処)</p>
+      <a
+        href="https://stackoverflow.com/questions/41704748/saveas-is-not-defined-when-using-jszip">https://stackoverflow.com/questions/41704748/saveas-is-not-defined-when-using-jszip</a>
+
+      <p>JSZip JavaScriptでzipファイルの作成と、圧縮されない問題の対応</p>
+      <a
+        href="https://symfoware.blog.fc2.com/blog-entry-2578.html">https://symfoware.blog.fc2.com/blog-entry-2578.html</a>
+
+      <p>JavaScript | ファイル名に使えない記号を削除</p>
+      <a
+        href="https://amaraimusi.sakura.ne.jp/sample/js/js_not_mark_file/js_not_mark_file.html">https://amaraimusi.sakura.ne.jp/sample/js/js_not_mark_file/js_not_mark_file.html</a>
+
+    </details>
+  </div>
+
+  <!-- ここの位置に書かないとElementより先に読まれてエラーになる -->
+  <script type="module" src="main.mjs"></script>
+</body>
+
+</html>

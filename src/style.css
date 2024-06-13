@@ -1,0 +1,228 @@
+@charset "utf-8";
+
+body {
+  font-family: 'MSPゴシック', Consolas;
+}
+
+.select-app-menu {
+  list-style: none;
+  display: flex;
+  padding-left: 0px;
+}
+
+
+.select-app-menu li {
+  background: lightgray;
+  padding: 8px 8px;
+
+  border: 1px solid black;
+  border-bottom: 1 black;
+
+  border-radius: 4px 4px 0 0;
+
+  cursor: pointer;
+}
+
+.select-app-menu li.selected-app {
+  font-weight: bold;
+  background: white;
+  color: black;
+  border-bottom: 0 black;
+}
+
+.app-main-ui {
+  display: none;
+}
+
+.app-main-ui.active {
+  display: block;
+}
+
+
+h1 {
+  border-bottom: 1px solid black;
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+input {
+  width: 130px;
+}
+
+
+.manual {
+  background: #f7ffcd;
+}
+
+.attention {
+  margin-top: 16px;
+}
+
+.attention p:before {
+  white-space: pre-wrap;
+  content: "   ";
+}
+
+.input-timetable {
+  margin-top: 32px;
+}
+
+
+button {
+  all: unset;
+  height: 70%;
+  width: 100%;
+  background: orange;
+  border-radius: 10px;
+  text-align: center;
+  padding: 8px 0;
+  cursor: pointer;
+  box-shadow: 0 3px black;
+}
+
+
+.menu {
+  margin-top: 32px;
+}
+
+.menu-items {
+  width: 600px;
+  display: flex;
+  justify-content:
+    flex-start;
+
+}
+
+.menu-items div {
+  padding: 5px 5px;
+}
+
+
+.focus-day-class {
+  background: lightblue;
+}
+
+
+.class-num {
+  text-align: center;
+}
+
+.class-num input {
+  font-size: 32px;
+  height: 50px;
+  width: 75px;
+}
+
+.input-name input {
+  font-size: 16px;
+  height: 16px;
+  width: 120px;
+}
+
+.generate-button {
+  border: none;
+  margin-top: 16px;
+  margin-left: 50px;
+}
+
+button:hover {
+  opacity: .8;
+}
+
+button:active {
+  box-shadow: 0 1px black;
+  transform: translateY(3px);
+}
+
+
+/* */
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+
+.supplement {
+  margin-top: 34px;
+}
+
+code {
+  background: rgb(237, 248, 217);
+}
+
+
+.other {
+  margin-top: 32px;
+}
+
+.other a+p {
+  margin-top: 28px;
+}
+
+.other details+details {
+  margin-top: 32px;
+}
+
+details {
+  background-color: lightyellow;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: .5em .5em 0;
+}
+
+summary {
+  font-weight: bold;
+  margin: -.5em -.5em 0;
+  padding: .5em;
+}
+
+details[open] {
+  padding: .5em;
+}
+
+details[open] summary {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: .5em;
+}
+
+/* メディアクエリーーーーーーーーーーーーーーー */
+
+@media (max-width: 500px) {
+  p {
+    font-size: 12px;
+  }
+
+  .timetable input {
+    width: 50px;
+  }
+
+
+  .input-name input {
+    font-size: 16px;
+    height: 16px;
+    width: 120px;
+  }
+
+  .generate-button {
+    width: 70px;
+    margin-left: 0px;
+  }
+}
+
+/* @media (max-width: 1050px) {
+  p {
+    font-size: 12px;
+  }
+
+  .timetable input {
+    width: 50px;
+  }
+} */
