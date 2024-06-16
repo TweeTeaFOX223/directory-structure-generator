@@ -27,7 +27,7 @@
 | 技術    | 使用しているもの                                   |
 | ---------- | ---------------------------------------------- |
 | 言語| html・JavaScript・css                 |
-| 開発とビルド   | webpackとwebpack-dev-server(MITライセンス) |
+| 開発とビルド   | viteとvite-plugin-singlefile(MITライセンス) |
 <br>  
 
 | JavaScriptの機能 | 使用しているライブラリ |
